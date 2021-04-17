@@ -1,6 +1,10 @@
 import openpyxl
 county_schema_path = "../data/AHRF_2019-2020/DOC/AHRF 2019-2020 Technical Documentation.xlsx"
 def parse_schema(schema_path, mode):
+    """
+    This function parses schema
+    
+    """
     if mode == 'state':
         schema_file = openpyxl.load_workbook(schema_path)
         sheet = schema_file.active
@@ -54,6 +58,3 @@ def parse_schema(schema_path, mode):
 
     return data_values
 
-
-county_schema = parse_schema(county_schema_path, 'county')
-print (county_schema[:20])
