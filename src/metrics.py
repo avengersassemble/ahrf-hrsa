@@ -6,7 +6,7 @@ from parse_data import get_dataframe
 state_schema_path = "../data/AHRF_SN_2019-2020/AHRF SN 2019-2020 Tech Doc.xlsx"
 county_schema_path = "../data/AHRF_2019-2020/DOC/AHRF 2019-2020 Technical Documentation.xlsx"
 state_data_path = "../data/AHRF_SN_2019-2020/AHRFSN2020.asc"
-state_data_output_dir = "../data/AHRF_SN_2019-2020"
+state_data_output_dir = "../data/output/AHRF_SN_2019-2020"
 state_data_output_filename = "AHRFSN2020.csv"
 
 def get_metrics(state_abbr, variable, fetch_mode = False):
@@ -30,8 +30,3 @@ def get_metrics(state_abbr, variable, fetch_mode = False):
         return output
     else:
         raise Exception(f"{state_abbr} and {variable} are not valid")
-
-
-print (get_metrics('AL', 'Physicians, Total ', fetch_mode = True))
-
-    
